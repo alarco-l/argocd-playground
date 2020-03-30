@@ -1,0 +1,4 @@
+appName: web-demo
+namespace: default
+replicas: 3
+tag: web-demo0.1.13-8dcb1f9

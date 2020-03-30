@@ -1,0 +1,59 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: dotnet-web
+  namespace: argocd
+spec:
+  descriptions: dotnet web project
+  sourceRepos:
+    - {{ .Values.repoUrl }}
+  destinations:
+    - namespace: {{ .Values.namespace }}
+      server: {{ .Values.destinationServer }}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: web-demo
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  syncPolicy:
+    automated:
+      prune: true
+  destination:
+    namespace: {{ .Values.namespace }}
+    server: {{ .Values.destinationServer }}
+  project: dotnet-web
+  source:
+    path: dotnet-web
+    repoURL: {{ .Values.repoUrl }}
+    targetRevision: HEAD
+    helm:
+      valuesFiles:
+        - web-demo/values.yaml
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: webapi-demo
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  syncPolicy:
+    automated:
+      prune: true
+  destination:
+    namespace: {{ .Values.namespace }}
+    server: {{ .Values.destinationServer }}
+  project: dotnet-web
+  source:
+    path: dotnet-web
+    repoURL: {{ .Values.repoUrl }}
+    targetRevision: HEAD
+    helm:
+      valuesFiles:
+        - webapi-demo/values.yaml
+ 

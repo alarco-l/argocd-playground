@@ -1,0 +1,4 @@
+appName: webapi-demo
+namespace: default
+replicas: 3
+tag: webapi-demo1.0
