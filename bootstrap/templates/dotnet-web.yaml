@@ -31,7 +31,7 @@ spec:
     repoURL: {{ .Values.repoUrl }}
     targetRevision: HEAD
     helm:
-      valuesFiles:
+      valueFiles:
         - web-demo/values.yaml
 ---
 apiVersion: argoproj.io/v1alpha1
@@ -54,6 +54,6 @@ spec:
     repoURL: {{ .Values.repoUrl }}
     targetRevision: HEAD
     helm:
-      valuesFiles:
+      valueFiles:
         - webapi-demo/values.yaml
  
