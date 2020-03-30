@@ -1,0 +1,3 @@
+destinationServer: https://kubernetes.default.svc
+repoUrl: https://github.com/alarco-l/argocd-playground.git
+namespace: default
