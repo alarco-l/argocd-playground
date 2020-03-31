@@ -3,5 +3,5 @@ containerName: blue-green-demo
 activeName: blue-green-demo-active
 previewName: blue-green-demo-active
 replicas: 2
-tag: web-demo-0.1.17-e74a4da
+tag: web-demo-0.1.17-9f51e89
 namespace: default
