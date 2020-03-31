@@ -1,0 +1,7 @@
+appName: blue-green
+containerName: blue-green-demo
+activeName: blue-green-demo-active
+previewName: blue-green-demo-active
+replicas: 2
+tag: web-demo-0.1.17-e74a4da
+namespace: default
