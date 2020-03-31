@@ -1,4 +1,4 @@
 appName: dotnet-web
 namespace: default
 replicas: 3
-tag: web-demo-0.1.15-c8cf32e
+tag: web-demo-0.1.16-66fc2fa
