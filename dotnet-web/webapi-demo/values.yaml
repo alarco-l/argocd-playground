@@ -1,4 +1,4 @@
-appName: webapi-demo
+appName: dotnet-webapi
 namespace: default
 replicas: 3
 tag: webapi-demo1.0
